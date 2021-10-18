@@ -2,17 +2,16 @@ class Player
   def hand
     puts "数字を入力してください。"
     puts "0:グー, 1:チョキ, 2:パー"
-    input_hand =gets.chomp
-    while true
-       if input_hand.include?("0" "1" "2")
-        return input_hand
-       else
-        puts "0〜2の数字を入力してください。"
-        puts "0:グー, 1:チョキ, 2:パー"
-        break
-       end
-    end
-    input_hand.to_i
+    input_hand = gets.chomp
+      while true
+        if input_hand.include?("0") || input_hand.include?("1") || input_hand.include?("2")
+          return input_hand.to_i
+        else
+          puts "0〜2の数字を入力してください。"
+          puts "0:グー, 1:チョキ, 2:パー"
+          input_hand =gets.chomp
+        end
+      end
   end
 end
 class Enemy
